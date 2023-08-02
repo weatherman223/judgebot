@@ -30,7 +30,9 @@ class MyClient(discord.Client):
         if (message.content.startswith('im ready') or 
             message.content.startswith('Im ready') or 
             message.content.startswith('Im Ready') or
-            "i'm ready" in message.content or 
+            message.content.startswith('im Ready') or
+            "i'm ready" in message.content or
+            "I'm ready" in message.content or
             "i'm Ready" in message.content or 
             "I'm Ready" in message.content):
             # length check
