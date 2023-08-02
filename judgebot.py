@@ -18,7 +18,7 @@ class MyClient(discord.Client):
             "i'm Ready" in message.content or 
             "I'm Ready" in message.content):
             # length check
-            if len(message.content) in (7, 8):
+            if len(message.content) in (7, 8, 9):
                 # Wait for 8 seconds before sending the message.
                 await asyncio.sleep(8)
 
