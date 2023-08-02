@@ -11,12 +11,13 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
         
-        content_lower = message.content.lower()  # Convert message content to lowercase.
-        trigger_phrases = ["im ready", "i'm ready"]
-
-        # Perform checks for trigger phrases in lowercase.
-        if any(content_lower.startswith(trigger) or trigger in content_lower for trigger in trigger_phrases):
-            # Check if the message content length is exactly 7 or 8 characters.
+        if (message.content.startswith('im ready') or 
+            message.content.startswith('Im ready') or 
+            message.content.startswith('Im Ready') or
+            "i'm ready" in message.content or 
+            "i'm Ready" in message.content or 
+            "I'm Ready" in message.content):
+            # length check
             if len(message.content) in (7, 8):
                 # Wait for 8 seconds before sending the message.
                 await asyncio.sleep(8)
