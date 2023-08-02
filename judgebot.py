@@ -32,6 +32,24 @@ class MyClient(discord.Client):
                 await message.channel.send("12 seconds")
             else:
                 return
+               
+        if (message.content.startswith('I didnt say I was ready') or 
+            message.content.startswith('i didnt say I was ready') or 
+            message.content.startswith('I didnt say i was ready') or
+            message.content.startswith('i didnt say i was ready') or
+            "I didn't say I was ready" in message.content or 
+            "i didn't say I was ready" in message.content or
+            "i didn't say i was ready" in message.content or 
+            "i didn't say i was ready" in message.content):
+            # length check
+            if len(message.content) in (22, 23, 24):
+                # Respond with "PENALTY"
+                await message.channel.send("PENALTY")
+
+                return
+            else:
+                return
+
 
 intents = discord.Intents.default()
 intents.message_content = True
